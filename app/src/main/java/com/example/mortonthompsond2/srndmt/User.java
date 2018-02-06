@@ -6,7 +6,7 @@ package com.example.mortonthompsond2.srndmt;
 
 public class User {
     // Labels table name
-    public static final String TABLE = "Student";
+    public static final String TABLE = "User";
 
     // Labels Table Columns names
     public static final String KEY_ID = "id";
@@ -15,7 +15,7 @@ public class User {
     public static final String KEY_age = "age";
 
     // property help us to keep data
-    public int student_ID;
+    public int user_ID;
     public String name;
     public String email;
     public int age;

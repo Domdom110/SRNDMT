@@ -26,6 +26,7 @@ public class UserRepo {
         values.put(User.KEY_age, user.age);
         values.put(User.KEY_email,user.email);
         values.put(User.KEY_name, user.name);
+        values.put(User.Key_password, user.password);
 
         // Inserting Row
         long user_Id = db.insert(User.TABLE, null, values);
@@ -49,6 +50,7 @@ public class UserRepo {
         values.put(User.KEY_age, user.age);
         values.put(User.KEY_email,user.email);
         values.put(User.KEY_name, user.name);
+        values.put(User.Key_password, user.password);
 
         // It's a good practice to use parameter ?, instead of concatenate string
         db.update(User.TABLE, values, User.KEY_ID + "= ?", new String[] { String.valueOf(user.user_ID) });
@@ -62,7 +64,8 @@ public class UserRepo {
                 User.KEY_ID + "," +
                 User.KEY_name + "," +
                 User.KEY_email + "," +
-                User.KEY_age +
+                User.KEY_age + "," +
+                User.Key_password +
                 " FROM " + User.TABLE;
 
         //User student = new User();
@@ -93,7 +96,8 @@ public class UserRepo {
                 User.KEY_ID + "," +
                 User.KEY_name + "," +
                 User.KEY_email + "," +
-                User.KEY_age +
+                User.KEY_age + "," +
+                User.Key_password +
                 " FROM " + User.TABLE
                 + " WHERE " +
                 User.KEY_ID + "=?";// It's a good practice to use parameter ?, instead of concatenate string
@@ -109,6 +113,7 @@ public class UserRepo {
                 user.name =cursor.getString(cursor.getColumnIndex(User.KEY_name));
                 user.email  =cursor.getString(cursor.getColumnIndex(User.KEY_email));
                 user.age =cursor.getInt(cursor.getColumnIndex(User.KEY_age));
+                user.password =cursor.getString(cursor.getColumnIndex(User.Key_password));
 
             } while (cursor.moveToNext());
         }

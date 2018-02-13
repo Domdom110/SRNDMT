@@ -13,12 +13,14 @@ public class User {
     public static final String KEY_name = "name";
     public static final String KEY_email = "email";
     public static final String KEY_age = "age";
+    public static final String Key_password = "password";
 
     // property help us to keep data
     public int user_ID;
     public String name;
     public String email;
     public int age;
+    public String password;
 }
 
 

@@ -30,7 +30,8 @@ public class DBHandler extends SQLiteOpenHelper {
                 + User.KEY_ID  + " INTEGER PRIMARY KEY AUTOINCREMENT ,"
                 + User.KEY_name + " TEXT, "
                 + User.KEY_age + " INTEGER, "
-                + User.KEY_email + " TEXT )";
+                + User.KEY_email + " TEXT "
+                + User.Key_password + "TEXT )";
 
         db.execSQL(CREATE_TABLE_User);
 

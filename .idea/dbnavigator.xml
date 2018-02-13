@@ -30,6 +30,9 @@
       <console name="SRNDMT" type="STANDARD" />
     </connection>
   </component>
+  <component name="DBNavigator.Project.DatabaseSessionManager">
+    <connection id="6fc94af3-9678-4d9e-824e-e1a88970f7a0" />
+  </component>
   <component name="DBNavigator.Project.EditorStateManager">
     <last-used-providers />
   </component>
@@ -90,6 +93,7 @@
         </ssh-settings>
         <details>
           <charset value="UTF-8" />
+          <session-management value="true" />
           <ddl-file-binding value="true" />
           <database-logging value="false" />
           <connect-automatically value="true" />
@@ -447,7 +451,6 @@
         <debug-execution-timeout value="600" />
         <focus-result value="false" />
         <prompt-execution value="false" />
-        <target-connection value="ASK" />
       </statement-execution>
       <script-execution>
         <command-line-interfaces>

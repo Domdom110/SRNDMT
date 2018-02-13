@@ -34,12 +34,21 @@ public class DBHandler extends SQLiteOpenHelper {
 
         db.execSQL(CREATE_TABLE_User);
 
+        String CREATE_TABLE_Manager = "CREATE TABLE " + Manager.TABLE  + "("
+                + Manager.KEY_ID  + " INTEGER PRIMARY KEY AUTOINCREMENT ,"
+                + Manager.KEY_name + " TEXT, "
+                + Manager.KEY_age + " INTEGER, "
+                + Manager.KEY_email + " TEXT )";
+
+        db.execSQL(CREATE_TABLE_Manager);
+
     }
 
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
         // Drop older table if existed, all data will be gone!!!
         db.execSQL("DROP TABLE IF EXISTS " + User.TABLE);
+        db.execSQL("DROP TABLE IF EXISTS " + Manager.TABLE);
 
         // Create tables again
         onCreate(db);

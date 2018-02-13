@@ -42,6 +42,14 @@ public class DBHandler extends SQLiteOpenHelper {
 
         db.execSQL(CREATE_TABLE_Manager);
 
+        String CREATE_TABLE_Workouts = "CREATE TABLE " + Workouts.TABLE  + "("
+                + Workouts.KEY_ID  + " INTEGER PRIMARY KEY AUTOINCREMENT ,"
+                + Workouts.KEY_name + " TEXT, "
+                + Workouts.KEY_description + " TEXT, "
+                + Workouts.KEY_type + " TEXT )";
+
+        db.execSQL(CREATE_TABLE_Workouts);
+
     }
 
     @Override
@@ -49,6 +57,7 @@ public class DBHandler extends SQLiteOpenHelper {
         // Drop older table if existed, all data will be gone!!!
         db.execSQL("DROP TABLE IF EXISTS " + User.TABLE);
         db.execSQL("DROP TABLE IF EXISTS " + Manager.TABLE);
+        db.execSQL("DROP TABLE IF EXISTS " + Workouts.TABLE);
 
         // Create tables again
         onCreate(db);

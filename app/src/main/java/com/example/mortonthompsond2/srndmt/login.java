@@ -37,20 +37,26 @@ public class login extends Fragment {
                 EditText etPassword = (EditText) myView.findViewById(R.id.etPassword);
                 String password = (etPassword.getText().toString());
 
-                // check if username is within database
-                if (username.equals("username")){
-                    // check if password is within database
-                    if (password.equals("password")){
-
-                        Toast.makeText(getContext(), "*personal info will be displayed below*", Toast.LENGTH_LONG).show();
-
-                    } else {
-                        Toast.makeText(getContext(), "Invalid Username/Password, try again", Toast.LENGTH_LONG).show();
-                    }
-
+                if(username.isEmpty() || password.isEmpty()){
+                    Toast.makeText(getContext(), "Please enter a valid username and password", Toast.LENGTH_LONG).show();
                 } else {
-                    Toast.makeText(getContext(), "Invalid Username/Password, try again", Toast.LENGTH_LONG).show();
+                    Toast.makeText(getContext(), "Enter User Account -->", Toast.LENGTH_LONG).show();
                 }
+
+                // check if username is within database
+                //if (username.equals("username")){
+                    // check if password is within database
+                    //if (password.equals("password")){
+
+                       // Toast.makeText(getContext(), "*personal info will be displayed below*", Toast.LENGTH_LONG).show();
+
+                   // } else {
+                       // Toast.makeText(getContext(), "Invalid Username/Password, try again", Toast.LENGTH_LONG).show();
+                   // }
+
+                //} else {
+                    //Toast.makeText(getContext(), "Invalid Username/Password, try again", Toast.LENGTH_LONG).show();
+                //}
 
 
 

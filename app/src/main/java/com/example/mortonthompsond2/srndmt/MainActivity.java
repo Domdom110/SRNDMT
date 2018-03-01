@@ -134,6 +134,9 @@ public class MainActivity extends AppCompatActivity {
             if (position == 1) {
                 return new Workouts();
             }
+            if (position == 1){
+                return new WorkoutsActivity();
+            }
             return PlaceholderFragment.newInstance(position + 1);
         }
 
@@ -150,6 +153,9 @@ public class MainActivity extends AppCompatActivity {
                     return "Login";
                 case 1:
                     return "Your Workouts";
+
+                    //return "Test Workout";
+
                 case 2:
                     return "SECTION 3";
             }

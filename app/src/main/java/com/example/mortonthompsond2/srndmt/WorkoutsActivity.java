@@ -22,22 +22,21 @@ public class WorkoutsActivity extends Fragment {
         //https://developer.android.com/reference/android/support/constraint/ConstraintSet.html
         //Documentation for Constraint Sets
         ConstraintSet mConstraintSet1 = new ConstraintSet(); //create the constraint set
-        ConstraintLayout mConstraintLayout = (ConstraintLayout) myView.findViewById(R.id.main_content); //cache the Constraint Layout
+        ConstraintLayout mConstraintLayout = (ConstraintLayout) myView.findViewById(R.id.constraints); //cache the Constraint Layout
 
         //mConstraintSet1.addToVerticalChain();
 
         //This is where we will populate the Activity with images based on the number needed, provided from the database
         //10 is a placeholder
-        //for(int i=0;i<10;i++) {
-            //ImageView image = new ImageView(getContext());
-            //image.setLayoutParams(new android.view.ViewGroup.LayoutParams(80,60));
-            //image.setMaxHeight(20);
-            //image.setMaxWidth(20);
-            //image.setBackgroundResource(R.drawable.ic_launcher_foreground);
-
+        for(int i=0;i<10;i++) {
+            ImageView image = new ImageView(getContext());
+            image.setLayoutParams(new android.view.ViewGroup.LayoutParams(80,60));
+            image.setMaxHeight(20);
+            image.setMaxWidth(20);
+            image.setBackgroundResource(R.drawable.ic_launcher_foreground);
             //Adds the view to the layout
-            //mConstraintLayout.addView(image);
-        //}
+            mConstraintLayout.addView(image);
+        }
 
 
 

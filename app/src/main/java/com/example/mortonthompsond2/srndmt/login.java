@@ -26,43 +26,52 @@ public class login extends Fragment {
 
         final Button btnLogin = (Button) myView.findViewById(R.id.btnLogin);
 
-        btnLogin.setOnClickListener(new View.OnClickListener(){
+        btnLogin.setOnClickListener(new View.OnClickListener() {
 
             @Override
             public void onClick(View v) {
+                EditText etPassword = (EditText) myView.findViewById(R.id.etPassword);
+                String password = (etPassword.getText().toString());
 
                 EditText etUsername = (EditText) myView.findViewById(R.id.etUsername);
                 String username = (etUsername.getText().toString());
 
-                EditText etPassword = (EditText) myView.findViewById(R.id.etPassword);
-                String password = (etPassword.getText().toString());
-
-                if(username.isEmpty() || password.isEmpty()){
+                if (username.isEmpty() || password.isEmpty()) {
                     Toast.makeText(getContext(), "Please enter a valid username and password", Toast.LENGTH_LONG).show();
                 } else {
                     Toast.makeText(getContext(), "Enter User Account -->", Toast.LENGTH_LONG).show();
                 }
 
                 // check if username is within database
-                //if (username.equals("username")){
+                if (username.equals("username")) {
+                    //if (username.equals("username")){
                     // check if password is within database
-                    //if (password.equals("password")){
+                    if (password.equals("password")) {
+                        //if (password.equals("password")){
 
-                       // Toast.makeText(getContext(), "*personal info will be displayed below*", Toast.LENGTH_LONG).show();
+                        Toast.makeText(getContext(), "*personal info will be displayed below*", Toast.LENGTH_LONG).show();
+                        // Toast.makeText(getContext(), "*personal info will be displayed below*", Toast.LENGTH_LONG).show();
 
-                   // } else {
-                       // Toast.makeText(getContext(), "Invalid Username/Password, try again", Toast.LENGTH_LONG).show();
-                   // }
+                    } else {
+                        Toast.makeText(getContext(), "Invalid Username/Password, try again", Toast.LENGTH_LONG).show();
+                    }
+                    // } else {
+                    // Toast.makeText(getContext(), "Invalid Username/Password, try again", Toast.LENGTH_LONG).show();
+                    // }
 
+                } else {
+                    Toast.makeText(getContext(), "Invalid Username/Password, try again", Toast.LENGTH_LONG).show();
+                }
                 //} else {
-                    //Toast.makeText(getContext(), "Invalid Username/Password, try again", Toast.LENGTH_LONG).show();
+                //Toast.makeText(getContext(), "Invalid Username/Password, try again", Toast.LENGTH_LONG).show();
                 //}
 
 
+            };
 
-            }
+
+
         });
-
         return myView;
     }
 }

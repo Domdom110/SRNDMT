@@ -1,15 +1,19 @@
 package com.example.mortonthompsond2.srndmt;
 
 import android.os.Bundle;
+import android.provider.MediaStore;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.Spinner;
+import android.widget.Toast;
 
 /**
  * Created by mortonthompsond2 on 2/12/2018.
@@ -45,6 +49,43 @@ public class Workouts extends Fragment{
         final ImageView ivWorkout = (ImageView) myView.findViewById(R.id.ivWorkout);
 
         final Spinner spWorkouts = (Spinner) myView.findViewById(R.id.spWorkouts);
+
+        btnView.setOnClickListener(new View.OnClickListener(){
+
+            @Override
+            public void onClick(View view) {
+
+                int radioMuscle_id = rgMuscles.getCheckedRadioButtonId();
+
+                if (radioMuscle_id == -1) {
+                    Toast.makeText(getContext(), "Please select your meal choice", Toast.LENGTH_LONG).show();
+                }
+                else {
+
+                    RadioButton muscleGroup = (RadioButton) myView.findViewById(radioMuscle_id);
+                    int muscleIndex = rgMuscles.indexOfChild(muscleGroup);
+
+                    if (muscleIndex == 0) {
+
+                    }
+                    if (muscleIndex == 1) {
+
+                    }
+                    if (muscleIndex == 2) {
+
+                    }
+                    if (muscleIndex == 3) {
+
+                    }
+                    if (muscleIndex == 4) {
+
+                    }
+                    if (muscleIndex == 5) {
+
+                    }
+                }
+            }
+        });
 
         return myView;
     }

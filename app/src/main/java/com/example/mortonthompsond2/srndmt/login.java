@@ -1,96 +1,49 @@
 package com.example.mortonthompsond2.srndmt;
 
-import android.content.Intent;
+/**
+ * Created by mortonthompsond2 on 3/5/2018.
+ */
+
+import android.content.ContentValues;
+import android.content.Context;
+import android.database.Cursor;
+import android.database.DatabaseErrorHandler;
+import android.database.sqlite.SQLiteDatabase;
+import android.database.sqlite.SQLiteOpenHelper;
 import android.os.Bundle;
-import android.support.annotation.Nullable;
-import android.support.v4.app.Fragment;
-import android.view.LayoutInflater;
+import android.support.v7.app.AppCompatActivity;
 import android.view.View;
-import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
-/**
- * Created by eth_nick on 1/25/2018.
- */
+import java.util.ArrayList;
+import java.util.List;
 
-public class login extends Fragment {
 
-    @Nullable
+public class login extends AppCompatActivity {
+
     @Override
-    public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, Bundle savedInstanceState) {
-        //return super.onCreateView(inflater, container, savedInstanceState);
-
-        // DONT RETURN RIGHT AWAY
-        final View myView = inflater.inflate(R.layout.login_fragment, container, false);
-
-        final Button btnLogin = (Button) myView.findViewById(R.id.btnLogin);
-
-
-        btnLogin.setOnClickListener(new View.OnClickListener(){
-            //public static final String EXTRA_MESSAGE = "com.example.mortonthompsond2.srndmt.MESSAGE";
-
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.login);
+        final EditText editText=(EditText)findViewById(R.id.username);
+        Button button=(Button)findViewById(R.id.submit);
+        button.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View v) {
-                EditText etPassword = (EditText) myView.findViewById(R.id.etPassword);
-                String password = (etPassword.getText().toString());
-
-                EditText etUsername = (EditText) myView.findViewById(R.id.etUsername);
-                String username = (etUsername.getText().toString());
-
-
-                if (username.isEmpty() || password.isEmpty()) {
-                    Toast.makeText(getContext(), "Please enter a valid username and password", Toast.LENGTH_LONG).show();
-                } else {
-                    Toast.makeText(getContext(), "Enter User Account -->", Toast.LENGTH_LONG).show();
+            public void onClick(View view) {
+                String a= editText.getText().toString();
+                try {
+                    user user = new user(getApplication());
+                    user.delete(a);
+                    Toast.makeText(getApplication(), "Deleted", Toast.LENGTH_SHORT).show();
                 }
-
-                // check if username is within database
-                if (username.equals("username")) {
-                    //if (username.equals("username")){
-                    // check if password is within database
-                    if (password.equals("password")) {
-                        //if (password.equals("password")){
-
-                        Toast.makeText(getContext(), "*personal info will be displayed below*", Toast.LENGTH_LONG).show();
-                        // Toast.makeText(getContext(), "*personal info will be displayed below*", Toast.LENGTH_LONG).show();
-
-                    } else {
-                        Toast.makeText(getContext(), "Invalid Username/Password, try again", Toast.LENGTH_LONG).show();
-                    }
-                    // } else {
-                    // Toast.makeText(getContext(), "Invalid Username/Password, try again", Toast.LENGTH_LONG).show();
-                    // }
-
-                } else {
-                    Toast.makeText(getContext(), "Invalid Username/Password, try again", Toast.LENGTH_LONG).show();
+                catch (Exception e)
+                {
+                    e.printStackTrace();
                 }
-                //} else {
-                //Toast.makeText(getContext(), "Invalid Username/Password, try again", Toast.LENGTH_LONG).show();
-                //}
-
-
-            };
-
-                EditText etPassword = (EditText) myView.findViewById(R.id.etPassword);
-                String password = (etPassword.getText().toString());
-
-                //if(username.isEmpty() || password.isEmpty()){
-                  //Toast.makeText(getContext(), "Please enter a valid username and password", Toast.LENGTH_LONG).show();
-                //} else {
-                   //Toast.makeText(getContext(), "Enter User Account -->", Toast.LENGTH_LONG).show();
-                //}
-
-                //Intent workoutIntent = new Intent(getContext(), WorkoutsActivity.class);
-                //String name = etUsername.getText().toString();
-                //intent.putExtra(EXTRA_MESSAGE ,name);
-                //startActivity(workoutIntent);
-
-
-
-
+            }
         });
-        return myView;
     }
+
 }

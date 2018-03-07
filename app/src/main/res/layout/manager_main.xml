@@ -4,7 +4,7 @@
     android:id="@+id/constraintLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.mortonthompsond2.srndmt.MainActivity$PlaceholderFragment">
+    tools:context="com.example.mortonthompsond2.srndmt.ManagerActivity$PlaceholderFragment">
 
 
     <EditText
@@ -60,21 +60,21 @@
     <android.support.design.widget.TextInputLayout
         android:layout_width="368dp"
         android:layout_height="wrap_content"
-       >
+        >
 
     </android.support.design.widget.TextInputLayout>
 
     <android.support.design.widget.TextInputLayout
         android:layout_width="368dp"
         android:layout_height="wrap_content"
-       >
+        >
 
     </android.support.design.widget.TextInputLayout>
 
     <android.support.design.widget.TextInputLayout
         android:layout_width="368dp"
         android:layout_height="wrap_content"
-       >
+        >
 
     </android.support.design.widget.TextInputLayout>
 
@@ -91,9 +91,9 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@id/password"
-android:layout_toRightOf="@id/insert"
+        android:layout_toRightOf="@id/insert"
         android:text="Delete"
-         />
+        />
 
     <Button
         android:id="@+id/view"

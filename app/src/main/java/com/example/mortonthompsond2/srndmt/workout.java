@@ -12,7 +12,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 
-public class manager extends SQLiteOpenHelper {
+public class workout extends SQLiteOpenHelper {
     SQLiteDatabase mdb;
     //  List<user> users;
     static  int id=0;
@@ -21,15 +21,15 @@ public class manager extends SQLiteOpenHelper {
     static ArrayList<String> data = new ArrayList<String>();
 
 
-    public manager(Context context) {
+    public workout(Context context) {
         super(context, "db", null, 1, null);
     }
 
     @Override
     public void onCreate(SQLiteDatabase sqLiteDatabase) {
-        String CREATE_CONTACTS_TABLE = "CREATE TABLE " + "manager" + "("
-                + "id" + " INTEGER PRIMARY KEY," + "firstname" + " TEXT,"
-                + "lastname" + " TEXT," + "username" +" TEXT," + "password" + " TEXT," + "email" + " TEXT" + ")";
+        String CREATE_CONTACTS_TABLE = "CREATE TABLE " + "workout" + "("
+                + "id" + " INTEGER PRIMARY KEY," + "name" + " TEXT,"
+                + "type" + " TEXT," + "description" +" TEXT," +  "pictureaddress" + " TEXT" + ")";
         sqLiteDatabase.execSQL(CREATE_CONTACTS_TABLE);
 
     }
@@ -38,26 +38,26 @@ public class manager extends SQLiteOpenHelper {
     public void onUpgrade(SQLiteDatabase sqLiteDatabase, int i, int i1) {
 
     }
-    public void add(String firstname, String lastname,String username,String email,String password)
+    public void add(String name, String type,String description,String pictureaddress)
     {
         SQLiteDatabase db=this.getWritableDatabase();
         ContentValues values = new ContentValues();
         // values.put("id",123);
-        values.put("firstname",firstname); // Contact Name
-        values.put("lastname", lastname);
-        values.put("username",username); // Contact Name
-        values.put("password", password);
-        values.put("email", email);// Contact Phone Number
+        values.put("name",name); // Contact Name
+        values.put("type", type);
+        values.put("description",description); // Contact Name
+        values.put("pictureaddress", pictureaddress);
+        // Contact Phone Number
 
         // Inserting Row
-        db.insert("manager", null, values);
+        db.insert("workout", null, values);
         db.close();
     }
     public void getuser() {
         SQLiteDatabase db=this.getReadableDatabase();
         try {
             //we used rawQuery(sql, selectionargs) for fetching all the employees
-            Cursor cursorEmployees = db.rawQuery("SELECT * FROM manager", null);
+            Cursor cursorEmployees = db.rawQuery("SELECT * FROM workout", null);
 
             //if the cursor has some data
             if (cursorEmployees.moveToFirst()) {
@@ -91,7 +91,7 @@ public class manager extends SQLiteOpenHelper {
     }
     public void delete(String id) {
         SQLiteDatabase db=this.getWritableDatabase();
-        db.execSQL("delete from "+"manager"+" where Google='"+id+"'");
+        db.execSQL("delete from "+"workout"+" where Google='"+id+"'");
     }
 
 }

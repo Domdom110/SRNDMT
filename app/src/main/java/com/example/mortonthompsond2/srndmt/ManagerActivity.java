@@ -23,7 +23,12 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
-public class MainActivity extends AppCompatActivity {
+
+/**
+ * Created by mortonthompsond2 on 3/6/2018.
+ */
+
+public class ManagerActivity extends AppCompatActivity {
 
     /**
      * The {@link android.support.v4.view.PagerAdapter} that will provide
@@ -33,7 +38,7 @@ public class MainActivity extends AppCompatActivity {
      * may be best to switch to a
      * {@link android.support.v4.app.FragmentStatePagerAdapter}.
      */
-    private SectionsPagerAdapter mSectionsPagerAdapter;
+    private ManagerActivity.SectionsPagerAdapter mSectionsPagerAdapter;
 
     /**
      * The {@link ViewPager} that will host the section contents.
@@ -43,13 +48,13 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.manager_main);
 
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         // Create the adapter that will return a fragment for each of the three
         // primary sections of the activity.
-        mSectionsPagerAdapter = new SectionsPagerAdapter(getSupportFragmentManager());
+        mSectionsPagerAdapter = new ManagerActivity.SectionsPagerAdapter(getSupportFragmentManager());
 
         // Set up the ViewPager with the sections adapter.
         mViewPager = (ViewPager) findViewById(R.id.container);
@@ -103,8 +108,8 @@ public class MainActivity extends AppCompatActivity {
          * Returns a new instance of this fragment for the given section
          * number.
          */
-        public static PlaceholderFragment newInstance(int sectionNumber) {
-            PlaceholderFragment fragment = new PlaceholderFragment();
+        public static ManagerActivity.PlaceholderFragment newInstance(int sectionNumber) {
+            ManagerActivity.PlaceholderFragment fragment = new ManagerActivity.PlaceholderFragment();
             Bundle args = new Bundle();
             args.putInt(ARG_SECTION_NUMBER, sectionNumber);
             fragment.setArguments(args);
@@ -128,7 +133,7 @@ public class MainActivity extends AppCompatActivity {
                     Intent i=new Intent(getContext(),update.class);
                     startActivity(i);
 
-                    }
+                }
 
 
             });
@@ -144,9 +149,9 @@ public class MainActivity extends AppCompatActivity {
             view.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-                    user a=new user(getContext());
+                    manager a=new manager(getContext());
                     a.getuser();
-                    Intent i=new Intent(getContext(),user_data.class);
+                    Intent i=new Intent(getContext(),manager_data.class);
                     startActivity(i);
 
                 }
@@ -154,7 +159,7 @@ public class MainActivity extends AppCompatActivity {
             insert.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-                    user a=new user(getContext());
+                    manager a=new manager(getContext());
                     a.add(firstname.getText().toString(),lastname.getText().toString(),email.getText().toString(),username.getText().toString(),password.getText().toString());
                     firstname.setText("");
                     lastname.setText("");
@@ -182,8 +187,7 @@ public class MainActivity extends AppCompatActivity {
         public Fragment getItem(int position) {
             // getItem is called to instantiate the fragment for the given page.
             // Return a PlaceholderFragment (defined as a static inner class below).
-            return MainActivity.PlaceholderFragment.newInstance(position + 1);
-
+            return ManagerActivity.PlaceholderFragment.newInstance(position + 1);
         }
 
         @Override

@@ -19,6 +19,11 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".user_data" />
+        <activity android:name=".delete" />
+        <activity android:name=".update" />
+        <activity android:name=".Alter"></activity>
+        <activity android:name=".login"></activity>
     </application>
 
 </manifest>

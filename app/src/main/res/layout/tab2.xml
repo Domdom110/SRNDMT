@@ -1,0 +1,97 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+
+    tools:context="com.example.mortonthompsond2.srndmt.MainActivity">
+
+    <EditText
+        android:id="@+id/firstnametab2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:hint="Manager First Name" />
+
+
+    <Button
+        android:id="@+id/updatetab2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Update"
+        android:layout_alignTop="@+id/viewtab2"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true" />
+
+    <EditText
+        android:id="@+id/lastnametab2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Manager Last Name"
+        android:layout_below="@+id/firstnametab2"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="36dp" />
+
+    <EditText
+        android:id="@+id/emailtab2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Manager Email"
+        android:layout_below="@+id/lastnametab2"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="33dp" />
+
+    <EditText
+        android:id="@+id/passwordtab2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Manager Password"
+        android:layout_below="@+id/usernametab2"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="34dp" />
+
+    <EditText
+        android:id="@+id/usernametab2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Manager Username"
+        android:layout_below="@+id/emailtab2"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="24dp" />
+
+    <Button
+        android:id="@+id/Deletetab2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Delete"
+        android:layout_alignBaseline="@+id/inserttab2"
+        android:layout_alignBottom="@+id/inserttab2"
+        android:layout_toRightOf="@+id/inserttab2"
+        android:layout_toEndOf="@+id/inserttab2" />
+
+    <Button
+        android:id="@+id/viewtab2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="View"
+        android:layout_alignBaseline="@+id/Deletetab2"
+        android:layout_alignBottom="@+id/Deletetab2"
+        android:layout_toRightOf="@+id/Deletetab2"
+        android:layout_toEndOf="@+id/Deletetab2"/>
+
+    <Button
+        android:id="@+id/inserttab2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+        android:text="Insert"
+        android:layout_below="@+id/passwordtab2"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="41dp" />
+
+</RelativeLayout>

@@ -19,11 +19,15 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".user_data" />
-        <activity android:name=".delete" />
-        <activity android:name=".update" />
-        <activity android:name=".Alter"></activity>
-        <activity android:name=".login"></activity>
+    <activity android:name=".UpdateData" />
+    <activity android:name=".DisplayData" />
+    <activity android:name=".DeleteData" />
+    <activity android:name=".DeleteDataTabTwo" />
+    <activity android:name=".DisplayDataTabTwo" />
+    <activity android:name=".UpdateDataTabTwo" />
+    <activity android:name=".DeleteDataTabeThree" />
+    <activity android:name=".DisplayDataTabThree" />
+    <activity android:name=".UpdateDataTabThree"></activity>
     </application>
 
 </manifest>

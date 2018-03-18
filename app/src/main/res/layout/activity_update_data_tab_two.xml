@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_update_data_tab_two"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.mortonthompsond2.srndmt.UpdateDataTabTwo">
+
+
+    <EditText
+        android:id="@+id/firstnametabtwo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Manager First Name"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="32dp" />
+
+    <EditText
+        android:id="@+id/lastnametabtwo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Manager Last Name"
+        android:layout_below="@+id/firstnametabtwo"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="36dp" />
+
+    <EditText
+        android:id="@+id/emailtabtwo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Manager Email"
+        android:layout_below="@+id/lastnametabtwo"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="33dp" />
+
+    <EditText
+        android:id="@+id/passwordtabtwo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Manager Password"
+        android:layout_below="@+id/usernametabtwo"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="34dp" />
+
+    <EditText
+        android:id="@+id/usernametabtwo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Manager Username"
+        android:layout_below="@+id/emailtabtwo"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="24dp" />
+
+    <Button
+        android:id="@+id/updatetabtwo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Update"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginRight="130dp"
+        android:layout_marginEnd="130dp"
+        android:layout_marginBottom="27dp" />
+</RelativeLayout>

@@ -19,7 +19,7 @@ import android.view.ViewGroup;
 
 import android.widget.TextView;
 
-public class MainActivity extends AppCompatActivity {
+public class tabsWithSignupsignin extends AppCompatActivity {
 
     /**
      * The {@link android.support.v4.view.PagerAdapter} that will provide
@@ -39,7 +39,7 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_tabs_with_signupsignin);
 
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
@@ -70,7 +70,6 @@ public class MainActivity extends AppCompatActivity {
 
         return super.onOptionsItemSelected(item);
     }
-
     /**
      * A {@link FragmentPagerAdapter} that returns a fragment corresponding to
      * one of the sections/tabs/pages.
@@ -87,14 +86,11 @@ public class MainActivity extends AppCompatActivity {
             switch(position)
             {
                 case 0:
-                    Tab1 tab1 = new Tab1();
+                    signuptab tab1 = new signuptab();
                     return tab1;
                 case 1:
-                    Tab2 tab2 = new Tab2();
+                    signintab tab2 = new signintab();
                     return tab2;
-                case 2:
-                    Tab3 tab3 = new Tab3();
-                    return tab3;
                 default:
                     return null;
             }
@@ -102,19 +98,17 @@ public class MainActivity extends AppCompatActivity {
 
         @Override
         public int getCount() {
-            // Show 3 total pages.
-            return 3;
+            // Show 2 total pages.
+            return 2;
         }
 
         @Override
         public CharSequence getPageTitle(int position) {
             switch (position) {
                 case 0:
-                    return "User";
+                    return "Sign Up";
                 case 1:
-                    return "Manager";
-                case 2:
-                    return "Workout";
+                    return "Sign In";
             }
             return null;
         }

@@ -77,6 +77,33 @@ public class DatabaseHelperTabTwo extends SQLiteOpenHelper
         return contact;
     }
 
+    public String searchPassword(String username)
+    {
+        SQLiteDatabase db = this.getReadableDatabase();
+
+        String query = "SELECT username, password FROM " + TABLE_CONTACTS;
+
+        Cursor cursor = db.rawQuery(query,null);
+
+        String a, b;
+        b = "not found" ;
+
+        if(cursor.moveToFirst())
+        {
+            do {
+                a = cursor.getString(0);
+
+                if(a.equals(username))
+                {
+                    b = cursor.getString(1);
+                    break;
+                }
+
+            }while(cursor.moveToNext());
+        }
+        return b;
+    }
+
     public List<contact> getAllContacts()
     {
         List<contact> contactList = new ArrayList<>();

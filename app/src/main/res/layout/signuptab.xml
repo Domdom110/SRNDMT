@@ -1,0 +1,23 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.mortonthompsond2.srndmt.tabsWithSignupsignin">
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Sign UP as a User"
+        android:id="@+id/userSignup"
+        android:layout_centerVertical="true"
+        android:layout_centerHorizontal="true" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Sign UP as a Manager"
+        android:id="@+id/managerSignup"
+        android:layout_marginBottom="43dp"
+        android:layout_above="@+id/userSignup"
+        android:layout_centerHorizontal="true" />
+</RelativeLayout>

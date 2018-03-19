@@ -5,9 +5,6 @@ package com.example.mortonthompsond2.srndmt;
  */
 
 public class contact {
-    int id;
-    String name;
-    String phoneNumber;
     String firstName, lastName, userName, email, password;
 
     public contact() {

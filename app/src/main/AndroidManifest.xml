@@ -5,13 +5,43 @@
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
-        android:label="@string/app_name"
-        android:roundIcon="@mipmap/ic_launcher_round"
+        android:label="Record Application"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
             android:name=".MainActivity"
-            android:label="@string/app_name"
+            android:label="Manager's Page"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
+        <activity android:name=".UpdateData"
+            android:label="Update Data"/>
+
+        <activity android:name=".DisplayData"
+            android:label="Display Data"/>
+
+        <activity android:name=".DeleteData"
+            android:label="Delete Data"/>
+
+        <activity android:name=".DeleteDataTabTwo"
+            android:label="Delete Data"/>
+
+        <activity android:name=".DisplayDataTabTwo"
+            android:label="Display Data"/>
+
+        <activity android:name=".UpdateDataTabTwo"
+            android:label="Update Data"/>
+
+        <activity android:name=".DeleteDataTabeThree"
+            android:label="Delete Data"/>
+
+        <activity android:name=".DisplayDataTabThree"
+            android:label="Display Data"/>
+
+        <activity android:name=".UpdateDataTabThree"
+            android:label="Update Data"/>
+
+        <activity
+            android:name=".tabsWithSignupsignin"
+            android:label="SRNDMT"
             android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -19,15 +49,21 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-    <activity android:name=".UpdateData" />
-    <activity android:name=".DisplayData" />
-    <activity android:name=".DeleteData" />
-    <activity android:name=".DeleteDataTabTwo" />
-    <activity android:name=".DisplayDataTabTwo" />
-    <activity android:name=".UpdateDataTabTwo" />
-    <activity android:name=".DeleteDataTabeThree" />
-    <activity android:name=".DisplayDataTabThree" />
-    <activity android:name=".UpdateDataTabThree"></activity>
+
+        <activity android:name=".SignUPUser"
+            android:label="Sign Up as a User"/>
+
+        <activity android:name=".SignUPManager"
+            android:label="Sign Up as a Manager"/>
+
+        <activity android:name=".SignINUser"
+            android:label="Sign In as a User"/>
+
+        <activity android:name=".SignINManager"
+            android:label="Sign In as a Manager"/>
+
+        <activity android:name=".UserProfile"
+            android:label="Profile"></activity>
     </application>
 
 </manifest>

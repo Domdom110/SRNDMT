@@ -31,7 +31,7 @@ public class SignINUser extends AppCompatActivity {
                 String pass_word = db.searchPassword(user_name);
                 if (!user_name.isEmpty() && !password.isEmpty()) {
                     if (password.equals(pass_word)) {
-                        Intent intent = new Intent(SignINUser.this, UserProfile.class);
+                        Intent intent = new Intent(SignINUser.this, UserTabs.class);
                         Toast.makeText(SignINUser.this, "Successfully Signed In", Toast.LENGTH_SHORT).show();
                         intent.putExtra("username",user_name);
                         startActivity(intent);

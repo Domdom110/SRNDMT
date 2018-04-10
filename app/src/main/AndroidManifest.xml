@@ -51,6 +51,11 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity
+            android:name=".UserTabs"
+            android:label="SRNDMT"
+            android:theme="@style/AppTheme.NoActionBar">
+        </activity>
 
         <activity android:name=".SignUPUser"
             android:label="Sign Up as a User"/>
@@ -69,6 +74,10 @@
 
         <activity android:name=".UserProfile"
             android:label="Profile"></activity>
+
+        <meta-data
+            android:name="preloaded_fonts"
+            android:resource="@array/preloaded_fonts" />
     </application>
 
 </manifest>

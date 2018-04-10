@@ -1,11 +1,14 @@
 package com.example.mortonthompsond2.srndmt;
 
+import android.support.v4.app.Fragment;
 import android.content.Context;
 import android.content.Intent;
 import android.net.Uri;
-import android.support.v7.app.AppCompatActivity;
+//import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.LayoutInflater;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
@@ -16,30 +19,30 @@ import android.widget.Toast;
 
 import java.io.Console;
 
-public class UserProfile extends AppCompatActivity {
+public class UserProfile extends Fragment{
 
     ImageView workoutImage;
     TextView name;
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_user_profile);
+    public View onCreateView(LayoutInflater inflater, ViewGroup container,
+                             Bundle savedInstanceState) {
+        View rootView = inflater.inflate(R.layout.activity_user_profile, container, false);
 
         //Declare all objects to be accessed later
-        Button showVideoBtn = (Button) findViewById(R.id.showVideoBtn);
-        name = (TextView) findViewById(R.id.name);
-        Intent intent = getIntent();
+        Button showVideoBtn = (Button) rootView.findViewById(R.id.showVideoBtn);
+        name = (TextView) rootView.findViewById(R.id.name);
+        Intent intent = getActivity().getIntent();
         String username = intent.getStringExtra("username");
-        workoutImage = (ImageView) findViewById(R.id.workoutImage);
+        workoutImage = (ImageView) rootView.findViewById(R.id.workoutImage);
         final String youtube = "Youtube URL: www.youtube.com/watch?v=";
         name.setText(username);
 
         //Fill array of workouts from preferences -- Dummy Information will be filled for now
         String[] workoutNames = {"Chest: Bench Press","Chest: Cable Flyes", "Back: Close Grip Rows", "Back: Wide Grip Rows", "Back: Delt Flys", "Legs: Squats", "Legs: Leg Press"};
         //Create spinner and array adapter to fill spinner with workoutNames array
-        final Spinner spWorkouts = (Spinner) findViewById(R.id.spWorkouts);
+        final Spinner spWorkouts = (Spinner) rootView.findViewById(R.id.spWorkouts);
 
-        ArrayAdapter<String> aaWorkouts = new ArrayAdapter<String>(this,   android.R.layout.simple_spinner_item, workoutNames);
+        ArrayAdapter<String> aaWorkouts = new ArrayAdapter<String>(getContext(),   android.R.layout.simple_spinner_item, workoutNames);
         aaWorkouts.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item); // The drop down view
         spWorkouts.setAdapter(aaWorkouts);
 
@@ -100,7 +103,7 @@ public class UserProfile extends AppCompatActivity {
                     }
                 } catch(Exception e) {
                     //If there is an error, create toast
-                    Toast.makeText(getBaseContext(), "Error in Spinner Change", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getContext(), "Error in Spinner Change", Toast.LENGTH_SHORT).show();
                 }
             }
 
@@ -122,5 +125,6 @@ public class UserProfile extends AppCompatActivity {
                 }
             }
         });
+        return rootView;
     }
 }

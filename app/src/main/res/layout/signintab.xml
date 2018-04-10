@@ -4,21 +4,25 @@
     android:layout_height="match_parent">
 
     <Button
+        android:id="@+id/userSignin"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Sign In as a User"
-        android:id="@+id/userSignin"
+        android:layout_centerHorizontal="true"
         android:layout_centerVertical="true"
-        android:layout_centerHorizontal="true" />
+        android:backgroundTint="@color/colorPrimary"
+        android:text="Sign In as a User"
+        android:textColor="@android:color/background_light" />
 
     <Button
+        android:id="@+id/managerSignin"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Sign In as a Manager"
-        android:id="@+id/managerSignin"
-        android:layout_marginBottom="47dp"
         android:layout_above="@+id/userSignin"
-        android:layout_centerHorizontal="true" />
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="47dp"
+        android:backgroundTint="@color/colorPrimary"
+        android:text="Sign In as a Manager"
+        android:textColor="@android:color/background_light" />
 
     <Button
         android:id="@+id/btnGuest"
@@ -27,5 +31,7 @@
         android:layout_below="@+id/userSignin"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="67dp"
-        android:text="Guest" />
+        android:backgroundTint="@color/colorPrimary"
+        android:text="Guest"
+        android:textColor="@android:color/background_light" />
 </RelativeLayout>

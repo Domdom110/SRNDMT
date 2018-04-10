@@ -38,16 +38,6 @@
         android:layout_marginTop="33dp" />
 
     <EditText
-        android:id="@+id/passwordtabtwo"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="Manager Password"
-        android:layout_below="@+id/usernametabtwo"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_marginTop="34dp" />
-
-    <EditText
         android:id="@+id/usernametabtwo"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -56,6 +46,16 @@
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
         android:layout_marginTop="24dp" />
+
+    <EditText
+        android:id="@+id/passwordtabtwo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/usernametabtwo"
+        android:layout_marginTop="34dp"
+        android:hint="Manager Password" />
 
     <Button
         android:id="@+id/updatetabtwo"
@@ -67,5 +67,7 @@
         android:layout_alignParentEnd="true"
         android:layout_marginRight="130dp"
         android:layout_marginEnd="130dp"
-        android:layout_marginBottom="27dp" />
+        android:layout_marginBottom="27dp"
+        android:backgroundTint="@color/colorPrimary"
+        android:textColor="@android:color/background_light"/>
 </RelativeLayout>

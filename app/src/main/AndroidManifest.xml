@@ -58,6 +58,9 @@
         <activity android:name=".SignUPManager"
             android:label="Sign Up as a Manager"/>
 
+        <activity android:name=".AllWorkouts"
+            android:label="Guest"/>
+
         <activity android:name=".SignINUser"
             android:label="Sign In as a User"/>
 

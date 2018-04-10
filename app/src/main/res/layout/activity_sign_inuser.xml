@@ -34,21 +34,4 @@
         android:layout_marginTop="110dp"
         android:text="Sign In" />
 
-    <Button
-        android:id="@+id/view_workouts"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/sign_in_user"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="51dp"
-        android:text="View Workouts" />
-
-    <TextView
-        android:id="@+id/textView2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/view_workouts"
-        android:layout_centerHorizontal="true"
-        android:text="(without logging in)" />
-
 </RelativeLayout>

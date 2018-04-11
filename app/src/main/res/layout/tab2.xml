@@ -21,7 +21,9 @@
         android:text="Update"
         android:layout_alignTop="@+id/viewtab2"
         android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true" />
+        android:layout_alignParentEnd="true"
+        android:backgroundTint="@color/colorPrimary"
+        android:textColor="@android:color/background_light"/>
 
     <EditText
         android:id="@+id/lastnametab2"
@@ -44,16 +46,6 @@
         android:layout_marginTop="33dp" />
 
     <EditText
-        android:id="@+id/passwordtab2"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="Manager Password"
-        android:layout_below="@+id/usernametab2"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_marginTop="34dp" />
-
-    <EditText
         android:id="@+id/usernametab2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -63,6 +55,16 @@
         android:layout_alignParentStart="true"
         android:layout_marginTop="24dp" />
 
+    <EditText
+        android:id="@+id/passwordtab2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/usernametab2"
+        android:layout_marginTop="34dp"
+        android:hint="Manager Password" />
+
     <Button
         android:id="@+id/Deletetab2"
         android:layout_width="wrap_content"
@@ -71,7 +73,9 @@
         android:layout_alignBaseline="@+id/inserttab2"
         android:layout_alignBottom="@+id/inserttab2"
         android:layout_toRightOf="@+id/inserttab2"
-        android:layout_toEndOf="@+id/inserttab2" />
+        android:layout_toEndOf="@+id/inserttab2"
+        android:backgroundTint="@color/colorPrimary"
+        android:textColor="@android:color/background_light"/>
 
     <Button
         android:id="@+id/viewtab2"
@@ -81,7 +85,9 @@
         android:layout_alignBaseline="@+id/Deletetab2"
         android:layout_alignBottom="@+id/Deletetab2"
         android:layout_toRightOf="@+id/Deletetab2"
-        android:layout_toEndOf="@+id/Deletetab2"/>
+        android:layout_toEndOf="@+id/Deletetab2"
+        android:backgroundTint="@color/colorPrimary"
+        android:textColor="@android:color/background_light"/>
 
     <Button
         android:id="@+id/inserttab2"
@@ -92,6 +98,8 @@
         android:layout_below="@+id/passwordtab2"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
-        android:layout_marginTop="41dp" />
+        android:layout_marginTop="41dp"
+        android:backgroundTint="@color/colorPrimary"
+        android:textColor="@android:color/background_light"/>
 
 </RelativeLayout>

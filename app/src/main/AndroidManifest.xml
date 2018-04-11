@@ -7,40 +7,40 @@
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
-        android:label="Record Application"
+        android:label="SRNDMT Workouts"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
             android:name=".MainActivity"
-            android:label="Manager's Page"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
-        <activity android:name=".UpdateData"
-            android:label="Update Data"/>
-
-        <activity android:name=".DisplayData"
-            android:label="Display Data"/>
-
-        <activity android:name=".DeleteData"
-            android:label="Delete Data"/>
-
-        <activity android:name=".DeleteDataTabTwo"
-            android:label="Delete Data"/>
-
-        <activity android:name=".DisplayDataTabTwo"
-            android:label="Display Data"/>
-
-        <activity android:name=".UpdateDataTabTwo"
-            android:label="Update Data"/>
-
-        <activity android:name=".DeleteDataTabeThree"
-            android:label="Delete Data"/>
-
-        <activity android:name=".DisplayDataTabThree"
-            android:label="Display Data"/>
-
-        <activity android:name=".UpdateDataTabThree"
-            android:label="Update Data"/>
-
+            android:label="Manager&apos;s Page"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".UpdateData"
+            android:label="Update Data" />
+        <activity
+            android:name=".DisplayData"
+            android:label="Display Data" />
+        <activity
+            android:name=".DeleteData"
+            android:label="Delete Data" />
+        <activity
+            android:name=".DeleteDataTabTwo"
+            android:label="Delete Data" />
+        <activity
+            android:name=".DisplayDataTabTwo"
+            android:label="Display Data" />
+        <activity
+            android:name=".UpdateDataTabTwo"
+            android:label="Update Data" />
+        <activity
+            android:name=".DeleteDataTabeThree"
+            android:label="Delete Data" />
+        <activity
+            android:name=".DisplayDataTabThree"
+            android:label="Display Data" />
+        <activity
+            android:name=".UpdateDataTabThree"
+            android:label="Update Data" />
         <activity
             android:name=".tabsWithSignupsignin"
             android:label="SRNDMT"
@@ -51,21 +51,27 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
-        <activity android:name=".SignUPUser"
-            android:label="Sign Up as a User"/>
-
-        <activity android:name=".SignUPManager"
-            android:label="Sign Up as a Manager"/>
-
-        <activity android:name=".SignINUser"
-            android:label="Sign In as a User"/>
-
-        <activity android:name=".SignINManager"
-            android:label="Sign In as a Manager"/>
-
-        <activity android:name=".UserProfile"
-            android:label="Profile"></activity>
+        <activity
+            android:name=".SignUPUser"
+            android:label="Sign Up as a User" />
+        <activity
+            android:name=".SignUPManager"
+            android:label="Sign Up as a Manager" />
+        <activity
+            android:name=".SignINUser"
+            android:label="Sign In as a User" />
+        <activity
+            android:name=".SignINManager"
+            android:label="Sign In as a Manager" />
+        <activity
+            android:name=".UserProfile"
+            android:label="Profile" />
+        <activity android:name=".addStats"
+            android:label="Add Stats"/>
+        <activity android:name=".viewStats"
+            android:label="View Stats"/>
+        <activity android:name=".viewWorkouts"
+            android:label="View Workouts"></activity>
     </application>
 
 </manifest>

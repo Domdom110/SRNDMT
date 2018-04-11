@@ -10,20 +10,20 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * Created by mortonthompsond2 on 3/18/2018.
+ * Created by mortonthompsond2 on 4/4/2018.
  */
 
-public class DatabaseHelperTabThree extends SQLiteOpenHelper
+public class statsDatabase extends SQLiteOpenHelper
 {
     public static final int DATABASE_VERSION = 1;
-    public static final String DATABASE_NAME = "detailManagertab3.db" ;
-    public static final String TABLE_CONTACTS = "detailstabthree" ;
-    public static final String KEY_NAME = "firstname" ;
-    public static final String KEY_TYPE = "lastname" ;
-    public static final String KEY_DESCRIPTION = "email" ;
-    public static final String KEY_ADDRESS = "username" ;
+    public static final String DATABASE_NAME = "stats.db" ;
+    public static final String TABLE_CONTACTS = "userStats" ;
+    public static final String ADD_DATE = "addDate" ;
+    public static final String ADD_REPETITIONS = "addRepetitions" ;
+    public static final String ADD_AMOUNT = "amountOfWeight" ;
+    public static final String ADD_NOTES = "addNotes" ;
 
-    public DatabaseHelperTabThree(Context context)
+    public statsDatabase(Context context)
     {
         super(context, DATABASE_NAME,null,DATABASE_VERSION);
     }
@@ -32,8 +32,8 @@ public class DatabaseHelperTabThree extends SQLiteOpenHelper
     {
 
         String CREATE_CONTACTS_TABLE = "CREATE TABLE " + TABLE_CONTACTS + "("
-                + KEY_NAME + " TEXT," + KEY_TYPE + " TEXT," +
-                KEY_DESCRIPTION + " TEXT," + KEY_ADDRESS + " TEXT " +  ");" ;
+                + ADD_DATE + " TEXT," + ADD_REPETITIONS + " TEXT," +
+                ADD_AMOUNT + " TEXT," + ADD_NOTES + " TEXT " +  ");" ;
 
         db.execSQL(CREATE_CONTACTS_TABLE);
     }
@@ -50,10 +50,10 @@ public class DatabaseHelperTabThree extends SQLiteOpenHelper
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues values= new ContentValues();
 
-        values.put(KEY_NAME,contact.getFirstName());
-        values.put(KEY_TYPE,contact.getLastName());
-        values.put(KEY_DESCRIPTION,contact.getEmail());
-        values.put(KEY_ADDRESS,contact.getUserName());
+        values.put(ADD_DATE,contact.getFirstName());
+        values.put(ADD_REPETITIONS,contact.getLastName());
+        values.put(ADD_AMOUNT,contact.getEmail());
+        values.put(ADD_NOTES,contact.getUserName());
 
         db.insert(TABLE_CONTACTS,null,values);
         db.close();
@@ -63,7 +63,7 @@ public class DatabaseHelperTabThree extends SQLiteOpenHelper
     {
         SQLiteDatabase db = this.getReadableDatabase();
 
-        Cursor cursor = db.query(TABLE_CONTACTS,new String[] {KEY_NAME,KEY_TYPE,KEY_DESCRIPTION,KEY_ADDRESS}, KEY_NAME
+        Cursor cursor = db.query(TABLE_CONTACTS,new String[] {ADD_DATE,ADD_REPETITIONS,ADD_AMOUNT,ADD_NOTES}, ADD_DATE
                 + "=?" , new String[] {String.valueOf(id)},null,null,null,null);
 
         if(cursor!= null)
@@ -106,12 +106,12 @@ public class DatabaseHelperTabThree extends SQLiteOpenHelper
         SQLiteDatabase db = this.getWritableDatabase();
 
         ContentValues values = new ContentValues();
-        values.put(KEY_NAME,firstName);
-        values.put(KEY_TYPE,lastName);
-        values.put(KEY_DESCRIPTION,email);
-        values.put(KEY_ADDRESS,userName);
+        values.put(ADD_DATE,firstName);
+        values.put(ADD_REPETITIONS,lastName);
+        values.put(ADD_AMOUNT,email);
+        values.put(ADD_NOTES,userName);
 
-        return db.update(TABLE_CONTACTS,values, KEY_NAME + "=?" ,
+        return db.update(TABLE_CONTACTS,values, ADD_DATE + "=?" ,
                 new String[]{firstName});
     }
 
@@ -119,7 +119,7 @@ public class DatabaseHelperTabThree extends SQLiteOpenHelper
     {
         SQLiteDatabase db = this.getWritableDatabase();
 
-        db.delete(TABLE_CONTACTS, KEY_NAME + " = ?" ,
+        db.delete(TABLE_CONTACTS, ADD_DATE + " = ?" ,
                 new String[]{id});
 
         db.close();

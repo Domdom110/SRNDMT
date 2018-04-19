@@ -26,18 +26,18 @@ public class AllWorkouts extends AppCompatActivity {
         setContentView(R.layout.activity_allworkouts);
 
         //Declare all objects to be accessed later
-        Button showVideoBtn = findViewById(R.id.showVideoBtn);
-        //name = (TextView) findViewById(R.id.name);
+        Button showVideoBtn = (Button) findViewById(R.id.showVideoBtn);
+        TextView name = (TextView) findViewById(R.id.name);
         Intent intent = getIntent();
-        //String username = intent.getStringExtra("username");
-        workoutImage = findViewById(R.id.workoutImage);
+        String username = intent.getStringExtra("username");
+        workoutImage = (ImageView) findViewById(R.id.workoutImage);
         final String youtube = "Youtube URL: www.youtube.com/watch?v=";
-        //name.setText(username);
+        name.setText(username);
 
         //Fill array of workouts from preferences -- Dummy Information will be filled for now
         String[] workoutNames = {"Chest: Bench Press","Chest: Cable Flyes", "Back: Close Grip Rows", "Back: Wide Grip Rows", "Back: Delt Flys", "Legs: Squats", "Legs: Leg Press"};
         //Create spinner and array adapter to fill spinner with workoutNames array
-        final Spinner spWorkouts = findViewById(R.id.spWorkouts);
+        final Spinner spWorkouts = (Spinner) findViewById(R.id.spWorkouts);
 
         ArrayAdapter<String> aaWorkouts = new ArrayAdapter<String>(this,   android.R.layout.simple_spinner_item, workoutNames);
         aaWorkouts.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item); // The drop down view

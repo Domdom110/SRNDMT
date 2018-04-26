@@ -21,7 +21,7 @@ public class signintab extends Fragment
 
         signInuser = (Button) rootView.findViewById(R.id.userSignin);
         signInmanager = (Button) rootView.findViewById(R.id.managerSignin);
-        guest = (Button) rootView.findViewById(R.id.btnGuest);
+        //guest = (Button) rootView.findViewById(R.id.btnGuest);
 
         signInuser.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -39,13 +39,13 @@ public class signintab extends Fragment
             }
         });
 
-        guest.setOnClickListener(new View.OnClickListener(){
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(getContext(),AllWorkouts.class);
-                startActivity(intent);
-            }
-        });
+        //guest.setOnClickListener(new View.OnClickListener(){
+            //@Override
+            //public void onClick(View view) {
+                //Intent intent = new Intent(getContext(),AllWorkouts.class);
+                //startActivity(intent);
+            //}
+        //});
 
         return rootView;
     }

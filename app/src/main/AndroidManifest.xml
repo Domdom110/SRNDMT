@@ -64,8 +64,9 @@
             android:name=".SignINManager"
             android:label="Sign In as a Manager" />
         <activity
-            android:name=".UserProfile"
-            android:label="Profile" />
+            android:name=".UserTabs"
+            android:label="Display User Tabs"
+            android:theme="@style/AppTheme.NoActionBar" />
         <activity android:name=".addStats"
             android:label="Add Stats"/>
         <activity android:name=".viewStats"

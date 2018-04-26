@@ -24,14 +24,4 @@
         android:text="Sign In as a Manager"
         android:textColor="@android:color/background_light" />
 
-    <Button
-        android:id="@+id/btnGuest"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/userSignin"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="67dp"
-        android:backgroundTint="@color/colorPrimary"
-        android:text="Guest"
-        android:textColor="@android:color/background_light" />
 </RelativeLayout>

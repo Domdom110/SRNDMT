@@ -2,7 +2,6 @@ package com.example.mortonthompsond2.srndmt;
 
 import android.support.v4.app.Fragment;
 import android.content.Intent;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -32,8 +31,8 @@ public class UserProfile extends Fragment {
             @Override
             public void onClick(View view)
             {
-                //Intent intent = new Intent(UserProfile.this, addStats.class);
-                //startActivity(intent);
+                Intent intent = new Intent(getActivity(), addStats.class);
+                startActivity(intent);
             }
         });
 
@@ -41,8 +40,8 @@ public class UserProfile extends Fragment {
             @Override
             public void onClick(View view)
             {
-                //Intent intent = new Intent(UserProfile.this,viewStats.class);
-                //startActivity(intent);
+                Intent intent = new Intent(getActivity(),viewStats.class);
+                startActivity(intent);
             }
         });
 
@@ -50,8 +49,8 @@ public class UserProfile extends Fragment {
             @Override
             public void onClick(View view)
             {
-                //Intent intent = new Intent(UserProfile.this,viewWorkouts.class);
-                //startActivity(intent);
+                Intent intent = new Intent(getActivity(),viewWorkouts.class);
+                startActivity(intent);
             }
         });
 

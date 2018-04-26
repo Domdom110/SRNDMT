@@ -21,8 +21,10 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignBottom="@+id/textview2"
+        android:layout_marginLeft="16dp"
         android:layout_marginStart="16dp"
         android:layout_toEndOf="@+id/textview2"
+        android:layout_toRightOf="@+id/textview2"
         android:text="guest!"
         android:textColor="#311414"
         android:textSize="20sp"
@@ -61,9 +63,20 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/workoutImage"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="14dp"
-        android:text="Show Video"
+        android:layout_marginTop="22dp"
         android:backgroundTint="@color/colorPrimary"
-        android:textColor="@android:color/background_light"/>
+        android:text="Show Video"
+        android:textColor="@android:color/background_light" />
+
+    <Button
+        android:id="@+id/addBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentTop="true"
+        android:backgroundTint="@color/colorPrimary"
+        android:text="Add To Preferences"
+        android:textColor="@android:color/background_light" />
 
 </RelativeLayout>

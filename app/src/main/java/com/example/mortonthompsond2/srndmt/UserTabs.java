@@ -83,9 +83,9 @@ public class UserTabs extends AppCompatActivity {
                 case 0:
                     UserProfile tab1 = new UserProfile();
                     return tab1;
-                //case 1:
-                    //signintab tab2 = new signintab();
-                    //return tab2;
+                case 1:
+                    AllWorkouts tab2 = new AllWorkouts();
+                    return tab2;
                 default:
                     return null;
             }
@@ -94,7 +94,7 @@ public class UserTabs extends AppCompatActivity {
         @Override
         public int getCount() {
             // Show 2 total pages.
-            return 1;
+            return 2;
         }
 
         @Override
@@ -102,8 +102,8 @@ public class UserTabs extends AppCompatActivity {
             switch (position) {
                 case 0:
                     return "User Preferences";
-                //case 1:
-                    //return "Sign In";
+                case 1:
+                    return "All Workouts";
             }
             return null;
         }

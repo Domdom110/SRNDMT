@@ -17,7 +17,7 @@ public class viewWorkouts extends AppCompatActivity
 
         view_workouts = (TextView) findViewById(R.id.displayWorkouts);
 
-        final DatabaseHelperTabThree db = new DatabaseHelperTabThree(this);
+        final DatabaseHelperPrefWorkouts db = new DatabaseHelperPrefWorkouts(this);
 
         List<contact> contacts = db.getAllContacts();
 

@@ -40,6 +40,8 @@ public class UpdateDataTabTwo extends AppCompatActivity {
                 email.setText("");
                 userName.setText("");
                 password.setText("");
+
+                finish();
             }
         });
     }

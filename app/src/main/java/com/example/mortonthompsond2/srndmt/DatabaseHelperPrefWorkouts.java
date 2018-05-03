@@ -10,47 +10,40 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * Created by mortonthompsond2 on 3/18/2018.
+ * Created by Ryan on 5/2/18.
  */
 
-public class DatabaseHelperTabThree extends SQLiteOpenHelper
-{
-    public static final int DATABASE_VERSION = 1;
-    public static final String DATABASE_NAME = "detailManagertab3.db" ;
-    public static final String TABLE_CONTACTS = "detailstabthree" ;
-    public static final String TABLE_PREFERRED_CONTACTS = "detailstabthree";
-    public static final String KEY_NAME = "firstname" ;
-    public static final String KEY_TYPE = "lastname" ;
-    public static final String KEY_DESCRIPTION = "email" ;
-    public static final String KEY_ADDRESS = "username" ;
-
-    public DatabaseHelperTabThree(Context context)
+public class DatabaseHelperPrefWorkouts extends SQLiteOpenHelper
     {
-        super(context, DATABASE_NAME,null,DATABASE_VERSION);
-    }
-    @Override
-    public void onCreate(SQLiteDatabase db)
-    {
+        public static final int DATABASE_VERSION = 1;
+        public static final String DATABASE_NAME = "detailManagertab3.db" ;
+        public static final String TABLE_CONTACTS = "detailstabthree" ;
+        public static final String KEY_NAME = "firstname" ;
+        public static final String KEY_TYPE = "lastname" ;
+        public static final String KEY_DESCRIPTION = "email" ;
+        public static final String KEY_ADDRESS = "username" ;
 
-        String CREATE_CONTACTS_TABLE = "CREATE TABLE " + TABLE_CONTACTS + "("
-                + KEY_NAME + " TEXT," + KEY_TYPE + " TEXT," +
-                KEY_DESCRIPTION + " TEXT," + KEY_ADDRESS + " TEXT " +  ");" ;
+    public DatabaseHelperPrefWorkouts(Context context)
+        {
+            super(context, DATABASE_NAME,null,DATABASE_VERSION);
+        }
+        @Override
+        public void onCreate(SQLiteDatabase db)
+        {
 
-        db.execSQL(CREATE_CONTACTS_TABLE);
+            String CREATE_CONTACTS_TABLE = "CREATE TABLE " + TABLE_CONTACTS + "("
+                    + KEY_NAME + " TEXT," + KEY_TYPE + " TEXT," +
+                    KEY_DESCRIPTION + " TEXT," + KEY_ADDRESS + " TEXT " +  ");" ;
 
-        String CREATE_PREFERRED_CONTACTS_TABLE = "CREATE TABLE " + TABLE_CONTACTS + "("
-                + KEY_NAME + " TEXT," + KEY_TYPE + " TEXT," +
-                KEY_DESCRIPTION + " TEXT," + KEY_ADDRESS + " TEXT " +  ");" ;
+            db.execSQL(CREATE_CONTACTS_TABLE);
+        }
 
-        db.execSQL(CREATE_PREFERRED_CONTACTS_TABLE);
-    }
-
-    @Override
-    public void onUpgrade(SQLiteDatabase db, int i, int i1)
-    {
-        db.execSQL("DROP TABLE IF EXISTS " + TABLE_CONTACTS);
-        onCreate(db);
-    }
+        @Override
+        public void onUpgrade(SQLiteDatabase db, int i, int i1)
+        {
+            db.execSQL("DROP TABLE IF EXISTS " + TABLE_CONTACTS);
+            onCreate(db);
+        }
 
     void addContact(contact contact)
     {
@@ -63,18 +56,6 @@ public class DatabaseHelperTabThree extends SQLiteOpenHelper
         values.put(KEY_ADDRESS,contact.getUserName());
 
         db.insert(TABLE_CONTACTS,null,values);
-        db.close();
-    }
-    void addPreferredContact(contact contact) {
-        SQLiteDatabase db = this.getWritableDatabase();
-        ContentValues values= new ContentValues();
-
-        values.put(KEY_NAME,contact.getFirstName());
-        values.put(KEY_TYPE,contact.getLastName());
-        values.put(KEY_DESCRIPTION,contact.getEmail());
-        values.put(KEY_ADDRESS,contact.getUserName());
-
-        db.insert(TABLE_PREFERRED_CONTACTS,null,values);
         db.close();
     }
 
@@ -99,31 +80,6 @@ public class DatabaseHelperTabThree extends SQLiteOpenHelper
         List<contact> contactList = new ArrayList<>();
 
         String selectQuery = "SELECT * FROM " + TABLE_CONTACTS;
-        SQLiteDatabase db = this.getWritableDatabase();
-
-        Cursor cursor = db.rawQuery(selectQuery,null);
-
-        if(cursor.moveToFirst())
-        {
-            do{
-                contact contact = new contact();
-
-                contact.setFirstName(cursor.getString(0));
-                contact.setLastName(cursor.getString(1));
-                contact.setEmail(cursor.getString(2));
-                contact.setUserName(cursor.getString(3));
-
-                contactList.add(contact);
-            }while(cursor.moveToNext());
-
-        }
-        return contactList;
-    }
-    public List<contact> getAllPrefContacts()
-    {
-        List<contact> contactList = new ArrayList<>();
-
-        String selectQuery = "SELECT * FROM " + TABLE_PREFERRED_CONTACTS;
         SQLiteDatabase db = this.getWritableDatabase();
 
         Cursor cursor = db.rawQuery(selectQuery,null);
@@ -179,5 +135,4 @@ public class DatabaseHelperTabThree extends SQLiteOpenHelper
         cursor.close();
         return cursor.getCount();
     }
-
 }

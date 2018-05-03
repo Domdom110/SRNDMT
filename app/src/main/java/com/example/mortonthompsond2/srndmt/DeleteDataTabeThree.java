@@ -1,5 +1,6 @@
 package com.example.mortonthompsond2.srndmt;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -24,8 +25,7 @@ public class DeleteDataTabeThree extends AppCompatActivity {
             public void onClick(View view) {
                 db.deleteContact(first_name.getText().toString());
                 Toast.makeText(getApplication(), "Deleted", Toast.LENGTH_SHORT).show();
-
-
+                finish();
             }
         });
     }

@@ -37,6 +37,8 @@ public class UpdateDataTabThree extends AppCompatActivity {
                 type.setText("");
                 description.setText("");
                 address.setText("");
+
+                finish();
             }
         });
     }

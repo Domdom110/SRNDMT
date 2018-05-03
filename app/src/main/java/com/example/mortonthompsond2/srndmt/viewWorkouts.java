@@ -23,7 +23,7 @@ public class viewWorkouts extends AppCompatActivity
 
         for(contact c : contacts)
         {
-            String log =c.getFirstName() + "\n" + c.getLastName() + "\n" + c.getEmail() + "\n" + c.getUserName()  + "\n ====== \n" ;
+            String log = "\n" + "Name: " + c.getFirstName() + "\nDescription: " + c.getEmail() + "\n ======" ;
             text = text + log;
         }
 
